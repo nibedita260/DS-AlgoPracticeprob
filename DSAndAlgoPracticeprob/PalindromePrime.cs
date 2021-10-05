@@ -6,6 +6,7 @@ namespace DSAndAlgoPracticeprob
 {
     class PalindromePrime
     {
+        public static List<int> list = new List<int>();
         public void CheckPrimePalindrome()
         {
             int n = 1000;
@@ -22,18 +23,35 @@ namespace DSAndAlgoPracticeprob
                 //check whether the reverse number and i value same or not.
                 if (revNum == i)
                 {
-                    bool isPrime = true;
-                    for (int j = 2; j <= i / 2; j++)
+                    bool isPrime = false;
+                    for (int j = 2; j <= i ; j++)
                     {
-
                         if (i % j == 0)
                         {
-                            isPrime = false;
+                            isPrime = true;
                             break;
                         }
-
+                    }
+                    if (isPrime)
+                    {
+                        list.Add(i);
                     }
                 }
+            }
+            foreach(var num in list)
+            {
+                while (num > 0)
+                {
+                    int digit = num % 10;
+
+                    // Update the frequency of
+                    // the current digit
+                    list[digit]++;
+
+                    // Remove the last digit
+                    //num = num/10;
+                }
+                Console.WriteLine(num + " is prime number and palindrome as well");
             }
         }
     }
