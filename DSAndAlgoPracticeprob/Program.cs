@@ -10,7 +10,7 @@ namespace DSAndAlgoPracticeprob
             bool isExit = false;
             while (!isExit)
             {
-                Console.WriteLine("choose 1.PermutationOfString 2.WordSearch ");
+                Console.WriteLine("choose 1.PermutationOfString 2.WordSearch 3.AnagramDetection");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
@@ -23,6 +23,9 @@ namespace DSAndAlgoPracticeprob
                         break;
                     case 2:SearchWord searchWord = new SearchWord();
                         searchWord.IsWordFound();
+                        break;
+                    case 3:AnagramsDetection anagramsDetection = new AnagramsDetection();
+                        anagramsDetection.CheckAnagrams();
                         break;
                     default:Console.WriteLine("choose valid option");
                         break;
