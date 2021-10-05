@@ -10,7 +10,7 @@ namespace DSAndAlgoPracticeprob
             bool isExit = false;
             while (!isExit)
             {
-                Console.WriteLine("choose 1.PermutationOfString 2.WordSearch 3.AnagramDetection");
+                Console.WriteLine("choose 1.PermutationOfString 2.WordSearch 3.AnagramDetection 4.PrimeNumbers");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
@@ -26,6 +26,9 @@ namespace DSAndAlgoPracticeprob
                         break;
                     case 3:AnagramsDetection anagramsDetection = new AnagramsDetection();
                         anagramsDetection.CheckAnagrams();
+                        break;
+                    case 4:PrimeNumbers primeNumbers = new PrimeNumbers();
+                        primeNumbers.PrintPrimeNumbers();
                         break;
                     default:Console.WriteLine("choose valid option");
                         break;
