@@ -10,7 +10,7 @@ namespace DSAndAlgoPracticeprob
             bool isExit = false;
             while (!isExit)
             {
-                Console.WriteLine("choose 1.PermutationOfString ");
+                Console.WriteLine("choose 1.PermutationOfString 2.WordSearch ");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
@@ -20,6 +20,9 @@ namespace DSAndAlgoPracticeprob
                         int n = str.Length;
                         PermutationString permutationString = new PermutationString();
                         permutationString.PrintPermutations(str,0,n-1);
+                        break;
+                    case 2:SearchWord searchWord = new SearchWord();
+                        searchWord.IsWordFound();
                         break;
                     default:Console.WriteLine("choose valid option");
                         break;
