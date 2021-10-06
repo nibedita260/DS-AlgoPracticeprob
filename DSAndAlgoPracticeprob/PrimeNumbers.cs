@@ -8,13 +8,28 @@ namespace DSAndAlgoPracticeprob
     {
         public void PrintPrimeNumbers()
         {
-            int n = 1000;
-            for(int i = 2; i <= n; i++)
+            int a=1, b=100, i, j, flag;
+            Console.WriteLine("\nPrime numbers between " +
+                              "{0} and {1} are: ", a, b);
+            for (i = a; i <= b; i++)
             {
-                if (n%i==0)
+                if (i == 1 || i == 0)
+                    continue;
+                flag = 1;
+
+                for (j = 2; j <= i / 2; ++j)
                 {
-                    Console.WriteLine("Prime Numbers are:" + i);
+                    if (i % j == 0)
+                    {
+                        flag = 0;
+                        break;
+                    }
                 }
+                if (flag == 1)
+                {
+                    Console.Write(i + " ");
+                }
+
             }
         }
     }
