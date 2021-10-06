@@ -40,6 +40,11 @@ namespace DSAndAlgoPracticeprob
                     case 7:InsertionSort insertionSort = new InsertionSort();
                         insertionSort.ISort();
                         break;
+                    case 8:MergeSort mergeSort = new MergeSort();
+                        string[] array = { "Jhon", "Vash", "Ball", "Code", "Beautiful" };
+                        mergeSort.Sort(array, 0, array.Length - 1);
+                        mergeSort.Display(array);
+                        break;
                     default:Console.WriteLine("choose valid option");
                         break;
                 }
