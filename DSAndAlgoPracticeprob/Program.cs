@@ -10,7 +10,7 @@ namespace DSAndAlgoPracticeprob
             bool isExit = false;
             while (!isExit)
             {
-                Console.WriteLine("choose 1.PermutationOfString 2.WordSearch 3.AnagramDetection 4.PrimeNumbers 5.PrimePalindrome 6.BubbleSort 7.InsertionSort");
+                Console.WriteLine("choose 1.PermutationOfString 2.WordSearch 3.AnagramDetection 4.PrimeNumbers 5.PrimePalindrome 6.BubbleSort 7.InsertionSort 8.MergeSort");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
