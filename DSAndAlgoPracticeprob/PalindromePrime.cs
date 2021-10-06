@@ -7,52 +7,75 @@ namespace DSAndAlgoPracticeprob
     class PalindromePrime
     {
         public static List<int> list = new List<int>();
-        public void CheckPrimePalindrome()
+        public void CheckIsPrimePalindromeAnagrams()
         {
-            int n = 1000;
-            for (int i = 2; i <= n; i++)
+            int a = 1, b = 30, i, j, flag;
+            Console.WriteLine("\nPrime numbers between " +
+                             "{0} and {1} are: ", a, b);
+            for (i = a; i <= b; i++)
             {
-                int num = i, revNum = 0;
-                while (num != 0)
+                if (i == 1 || i == 0)
+                    continue;
+                flag = 1;
+
+                for (j = 2; j <= i / 2; ++j)
                 {
-                    int digit;
-                    digit = num % 10;
-                    num = num / 10;
-                    revNum = revNum * 10 + digit;
-                }
-                //check whether the reverse number and i value same or not.
-                if (revNum == i)
-                {
-                    bool isPrime = false;
-                    for (int j = 2; j <= i ; j++)
+                    if (i % j == 0)
                     {
-                        if (i % j == 0)
-                        {
-                            isPrime = true;
-                            break;
-                        }
-                    }
-                    if (isPrime)
-                    {
-                        list.Add(i);
+                        flag = 0;
+                        break;
                     }
                 }
-            }
-            foreach(var num in list)
-            {
-                while (num > 0)
+                if (flag == 1)
                 {
-                    int digit = num % 10;
-
-                    // Update the frequency of
-                    // the current digit
-                    list[digit]++;
-
-                    // Remove the last digit
-                    //num = num/10;
+                   // Console.Write(i + " ");
+                    list.Add(i);
                 }
-                Console.WriteLine(num + " is prime number and palindrome as well");
+
             }
+            foreach (var elem in list)
+            {
+                if (ISCheckPalindrome(elem)==true && ISCheckAnagrams(elem)==true)
+                {
+                    Console.WriteLine(elem + " is prime number ,palindrome and andanagrams as well");
+                }
+            }
+        }
+        public bool ISCheckPalindrome(int num)
+        {
+            int n = num;
+            int revNum = 0;
+            while (num != 0)
+            {
+                int digit;
+                digit = num % 10;
+                num = num / 10;
+                revNum = revNum * 10 + digit;
+            }
+            if (n == revNum)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool ISCheckAnagrams(int num)
+        {
+            string str = num.ToString();
+            char[] charArr = str.ToCharArray();
+            Array.Sort(charArr);
+            string res = new string(charArr);
+            foreach (var n in list)
+            {
+                string s = n.ToString();
+                char[] charAr = s.ToCharArray();
+                Array.Sort(charAr);
+                string resStr = new string(charAr);
+                if (resStr == res)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
