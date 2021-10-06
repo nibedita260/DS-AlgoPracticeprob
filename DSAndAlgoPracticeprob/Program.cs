@@ -32,7 +32,7 @@ namespace DSAndAlgoPracticeprob
                         break;
                     case 5:
                         PalindromePrime palindromePrime = new PalindromePrime();
-                        palindromePrime.CheckPrimePalindrome();
+                        palindromePrime.CheckIsPrimePalindromeAnagrams();
                         break;
                     default:Console.WriteLine("choose valid option");
                         break;
